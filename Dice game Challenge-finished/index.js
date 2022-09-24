@@ -1,31 +1,10 @@
 function playGame() {
     var randomNumber1 = Math.floor(Math.random() * 6) + 1;
     var randomNumber2 = Math.floor(Math.random() * 6) + 1;
-    if(randomNumber1 === 1)
-        document.querySelector(".img1").setAttribute("src", "images/dice1.png");
-    else if(randomNumber1 === 2)
-        document.querySelector(".img1").setAttribute("src", "images/dice2.png");
-    else if(randomNumber1 === 3)
-        document.querySelector(".img1").setAttribute("src", "images/dice3.png");
-    else if(randomNumber1 === 4)
-        document.querySelector(".img1").setAttribute("src", "images/dice4.png");
-    else if(randomNumber1 === 5)
-        document.querySelector(".img1").setAttribute("src", "images/dice5.png");
-    else if(randomNumber1 === 6)
-        document.querySelector(".img1").setAttribute("src", "images/dice6.png");
-
-    if(randomNumber1 === 2)
-        document.querySelector(".img2").setAttribute("src", "images/dice1.png");
-    else if(randomNumber2 === 2)
-        document.querySelector(".img2").setAttribute("src", "images/dice2.png");
-    else if(randomNumber2 === 3)
-        document.querySelector(".img2").setAttribute("src", "images/dice3.png");
-    else if(randomNumber2 === 4)
-        document.querySelector(".img2").setAttribute("src", "images/dice4.png");
-    else if(randomNumber2 === 5)
-        document.querySelector(".img2").setAttribute("src", "images/dice5.png");
-    else if(randomNumber2 === 6)
-        document.querySelector(".img2").setAttribute("src", "images/dice6.png");
+    var dice1ImageSource = "images/dice" + randomNumber1 + ".png";
+    var dice2ImageSource = "images/dice" + randomNumber2 + ".png";
+    document.querySelector(".img1").setAttribute("src", dice1ImageSource);
+    document.querySelector(".img2").setAttribute("src", dice2ImageSource);
 
     if (randomNumber1 > randomNumber2)
         document.querySelector("h1").innerHTML = "Player one wins!";
@@ -34,3 +13,10 @@ function playGame() {
     else
         document.querySelector("h1").innerHTML = "It's a tie!";
 }
+
+/* document.querySelector("button").addEventListener("click", playGame);//Second way of making the button.
+//Event listener is a method that awaits two parameters. The first event is the action: which we 
+//specified is 'click', and the second one is what to do after the action is met, and in out case,
+//to execute the method we created.
+//For more info read: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+//and :https://developer.mozilla.org/en-US/docs/Web/Events */
